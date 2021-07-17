@@ -1,29 +1,27 @@
 import React, { useState } from "react";
 import Select from "react-select";
+import axios from "axios";
+import qs from "qs";
+import { languages } from "./languages";
 
 import {
   MainContainer,
-  ContentWrpper,
+  InputWrpper,
   Heading,
   Label,
   Input,
   SelectWrapper,
   Submitbutton,
+  OutputWrapper,
+  Outheading,
+  Output,
 } from "./homeStyles";
-
-const languages = [
-  { value: "german", label: "German" },
-  { value: "spanish", label: "Spanish" },
-  { value: "dutch", label: "Dutch" },
-];
 
 function Home() {
   const [language, setLanguage] = useState({});
   const [inputText, setInputText] = useState("");
-  if (inputText) console.log(inputText);
-  if (language.label) console.log(language.label);
+  const [output, setOutput] = useState(null);
 
-  //   let img_obj = apodobject.data.valueOf()[0];
   function customTheme(theme) {
     return {
       ...theme,
@@ -34,12 +32,32 @@ function Home() {
       },
     };
   }
+
+  async function handleTranslate() {
+    const data = {
+      auth_key: "5652c0b9-adcf-7f2e-f6a2-3a577f700dc9:fx",
+      text: inputText,
+      target_lang: language.value,
+    };
+    const options = {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      data: qs.stringify(data),
+      url: "https://api-free.deepl.com/v2/translate",
+    };
+    const result = await axios(options);
+    setOutput(result.data.translations[0]["text"]);
+  }
+
   return (
     <MainContainer id="main">
-      <ContentWrpper id="contentWrapper">
-        <Heading id="heading"> Simple Text Translator</Heading>
+      <InputWrpper id="contentWrapper">
+        <Heading id="heading">Simple Text Translator</Heading>
         <Label>Enter text in English</Label>
-        <Input onChange={(e) => setInputText(e.target.value)}></Input>
+        <Input
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        ></Input>
         <SelectWrapper id="SelectWrapper">
           <Select
             options={languages}
@@ -48,8 +66,12 @@ function Home() {
             placeholder="Translate to ..."
           ></Select>
         </SelectWrapper>
-        <Submitbutton>Submit</Submitbutton>
-      </ContentWrpper>
+        <Submitbutton onClick={handleTranslate}>Submit</Submitbutton>
+      </InputWrpper>
+      <OutputWrapper isOutput={output}>
+        <Outheading>Translation</Outheading>
+        <Output>{output}</Output>
+      </OutputWrapper>
     </MainContainer>
   );
 }
