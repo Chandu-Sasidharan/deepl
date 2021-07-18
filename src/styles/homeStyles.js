@@ -6,23 +6,8 @@ export const MainContainer = styled.div`
   grid-template-rows: min-content;
   position: relative;
   justify-items: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: #eee;
-`;
-
-export const InputWrpper = styled.div`
-  display: grid;
-  width: 70vw;
-  margin-top: 4rem;
-  row-gap: 1rem;
-  justify-self: center;
-  align-self: flex-start;
-  align-items: center;
-  justify-items: flex-start;
-
-  @media screen and (max-width: 50rem) {
-    width: 90vw;
-  }
 `;
 
 export const Heading = styled.div`
@@ -30,14 +15,37 @@ export const Heading = styled.div`
   justify-self: center;
   color: #777;
   font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 50rem) {
     font-size: 2rem;
   }
 `;
 
+export const ContentWrapper = styled.div`
+  display: grid;
+  align-items: flex-start;
+  width: 80vw;
+  column-gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media screen and (max-width: 50em) {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    width: 90vw;
+  }
+`;
+
+export const InputWrpper = styled.div`
+  display: grid;
+  width: 100%;
+  row-gap: 1rem;
+  align-items: flex-start;
+  justify-items: flex-start;
+`;
+
 export const Label = styled.div`
-  margin-top: 2.5rem;
   color: #777;
   font-size: 2rem;
   font-style: italic;
@@ -49,6 +57,7 @@ export const Label = styled.div`
 
 export const Input = styled.textarea`
   width: 100%;
+  font-size: 1.5rem;
   padding: 1rem 1rem;
   height: 15rem;
   color: #555;
@@ -62,7 +71,7 @@ export const SelectWrapper = styled.div`
   display: grid;
   margin-top: 1rem;
   color: #777;
-  font-size: 2rem;
+  font-size: 1.6rem;
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
@@ -74,7 +83,7 @@ export const Submitbutton = styled.div`
   background: transparent;
   width: fit-content;
   height: fit-content;
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 2rem;
   font-size: 1.5rem;
   font-weight: bold;
   border: 2px solid #bbb;
@@ -92,17 +101,12 @@ export const Submitbutton = styled.div`
 
 export const OutputWrapper = styled.div`
   display: ${(props) => (props.isOutput ? "grid" : "none")};
-  width: 70vw;
-  margin-top: 2rem;
+  width: 100%;
   justify-self: center;
   align-self: flex-start;
   align-items: center;
   justify-items: flex-start;
   font-size: 1.5rem;
-
-  @media screen and (max-width: 50rem) {
-    width: 90vw;
-  }
 `;
 
 export const Outheading = styled.div`

@@ -15,6 +15,7 @@ import {
   OutputWrapper,
   Outheading,
   Output,
+  ContentWrapper,
 } from "./styles/homeStyles";
 
 function Home() {
@@ -28,27 +29,29 @@ function Home() {
 
   return (
     <MainContainer id="main">
-      <InputWrpper id="contentWrapper">
-        <Heading id="heading">Simple Text Translator</Heading>
-        <Label>Enter text in English</Label>
-        <Input
-          value={inputText}
-          onChange={(e) => setInputText(e.target.value)}
-        ></Input>
-        <SelectWrapper id="SelectWrapper">
-          <Select
-            options={languages}
-            theme={SelectTheme}
-            onChange={setLanguage}
-            placeholder="Translate to ..."
-          ></Select>
-        </SelectWrapper>
-        <Submitbutton onClick={handleTranslate}>Submit</Submitbutton>
-      </InputWrpper>
-      <OutputWrapper isOutput={output}>
-        <Outheading>Translation</Outheading>
-        <Output>{output}</Output>
-      </OutputWrapper>
+      <Heading id="heading">Simple Text Translator</Heading>
+      <ContentWrapper id="contentWrapper">
+        <InputWrpper id="inputWrapper">
+          <Label>Enter text in English</Label>
+          <Input
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+          ></Input>
+          <SelectWrapper id="SelectWrapper">
+            <Select
+              options={languages}
+              theme={SelectTheme}
+              onChange={setLanguage}
+              placeholder="Translate to ..."
+            ></Select>
+          </SelectWrapper>
+          <Submitbutton onClick={handleTranslate}>Submit</Submitbutton>
+        </InputWrpper>
+        <OutputWrapper id="outputWrapper" isOutput={output}>
+          <Outheading>Translation</Outheading>
+          <Output>{output}</Output>
+        </OutputWrapper>
+      </ContentWrapper>
     </MainContainer>
   );
 }

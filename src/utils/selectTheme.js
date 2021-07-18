@@ -1,4 +1,5 @@
 function SelectTheme(theme) {
+  console.log(theme);
   return {
     ...theme,
     colors: {
