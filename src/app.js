@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Select from "react-select";
 import axios from "axios";
 import qs from "qs";
-import { languages } from "./languages";
+import { languages } from "./utils/languages";
 
 import {
   MainContainer,
@@ -15,7 +15,7 @@ import {
   OutputWrapper,
   Outheading,
   Output,
-} from "./homeStyles";
+} from "./styles/homeStyles";
 
 function Home() {
   const [language, setLanguage] = useState({});
@@ -35,7 +35,7 @@ function Home() {
 
   async function handleTranslate() {
     const data = {
-      auth_key: "5652c0b9-adcf-7f2e-f6a2-3a577f700dc9:fx",
+      Auth_Key: process.env.REACT_APP_AUTH_KEY,
       text: inputText,
       target_lang: language.value,
     };
@@ -43,7 +43,7 @@ function Home() {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
       data: qs.stringify(data),
-      url: "https://api-free.deepl.com/v2/translate",
+      url: process.env.REACT_APP_URL,
     };
     const result = await axios(options);
     setOutput(result.data.translations[0]["text"]);

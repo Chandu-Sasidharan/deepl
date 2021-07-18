@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import GlobalStyles from "./globalStyles";
-import Home from "./home";
+import GlobalStyles from "./styles/globalStyles";
+import App from "./app";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <Home />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
