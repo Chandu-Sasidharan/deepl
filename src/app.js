@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import axios from "axios";
-import qs from "qs";
+import Translate from "./utils/Translate";
 import { languages } from "./utils/languages";
 
 import {
@@ -32,21 +31,8 @@ function Home() {
       },
     };
   }
-
-  async function handleTranslate() {
-    const data = {
-      Auth_Key: process.env.REACT_APP_AUTH_KEY,
-      text: inputText,
-      target_lang: language.value,
-    };
-    const options = {
-      method: "POST",
-      headers: { "content-type": "application/x-www-form-urlencoded" },
-      data: qs.stringify(data),
-      url: process.env.REACT_APP_URL,
-    };
-    const result = await axios(options);
-    setOutput(result.data.translations[0]["text"]);
+  function handleTranslate() {
+    Translate(language, inputText, setOutput);
   }
 
   return (
