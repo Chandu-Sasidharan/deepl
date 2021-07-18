@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import Translate from "./utils/Translate";
+import Translate from "./utils/translate";
 import { languages } from "./utils/languages";
+import SelectTheme from "./utils/selectTheme";
 
 import {
   MainContainer,
@@ -21,16 +22,6 @@ function Home() {
   const [inputText, setInputText] = useState("");
   const [output, setOutput] = useState(null);
 
-  function customTheme(theme) {
-    return {
-      ...theme,
-      colors: {
-        ...theme.colors,
-        primary25: "#F9A796",
-        primary: "#FF7043",
-      },
-    };
-  }
   function handleTranslate() {
     Translate(language, inputText, setOutput);
   }
@@ -47,7 +38,7 @@ function Home() {
         <SelectWrapper id="SelectWrapper">
           <Select
             options={languages}
-            theme={customTheme}
+            theme={SelectTheme}
             onChange={setLanguage}
             placeholder="Translate to ..."
           ></Select>
