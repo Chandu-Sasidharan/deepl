@@ -10,19 +10,6 @@ export const MainContainer = styled.div`
   background-color: #eee;
 `;
 
-export const Heading = styled.div`
-  display: grid;
-  justify-self: center;
-  color: #777;
-  font-size: 3rem;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-
-  @media screen and (max-width: 50rem) {
-    font-size: 2rem;
-  }
-`;
-
 export const ContentWrapper = styled.div`
   display: grid;
   align-items: flex-start;
@@ -46,29 +33,18 @@ export const InputWrpper = styled.div`
   justify-items: flex-start;
 `;
 
-export const Label = styled.div`
+export const InputLabel = styled.div`
   color: ${(props) => (props.isError ? "#FC5735" : "#777")};
   font-size: 1.75rem;
   font-style: italic;
+  margin-left: 1rem;
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
   }
 `;
 
-export const Input = styled.textarea`
-  width: 100%;
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  height: 20rem;
-  color: #555;
-  border: none;
-  outline: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.15);
-`;
-
-export const SelectWrapper = styled.div`
+export const SelectButtonWrapper = styled.div`
   width: 100%;
   display: grid;
   margin-top: 1rem;
@@ -79,28 +55,6 @@ export const SelectWrapper = styled.div`
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
-  }
-`;
-
-export const Submitbutton = styled.div`
-  margin-top: 1rem;
-  background: transparent;
-  width: fit-content;
-  height: fit-content;
-  padding: 0.5rem 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 2px solid #bbb;
-  border-radius: 0.3rem;
-  text-decoration: none;
-  color: #777;
-  cursor: pointer;
-  transition: all 0.2s;
-  justify-self: flex-end;
-  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
-
-  &:hover {
-    background: #bbb;
   }
 `;
 
@@ -116,23 +70,13 @@ export const OutputWrapper = styled.div`
   font-size: 1.5rem;
 `;
 
-export const Outheading = styled.div`
+export const OutputLabel = styled.div`
   color: #777;
   font-size: 1.75rem;
   font-style: italic;
+  margin-left: 1rem;
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
   }
-`;
-
-export const Output = styled.div`
-  width: 100%;
-  font-size: 1.5rem;
-  padding: 1rem 1rem;
-  height: 20rem;
-  color: #555;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.15);
 `;

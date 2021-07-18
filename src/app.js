@@ -3,20 +3,20 @@ import Select from "react-select";
 import Translate from "./utils/translate";
 import { languages } from "./utils/languages";
 import SelectTheme from "./utils/selectTheme";
+import { SubmitButton } from "./components/button";
+import { InputTextArea } from "./components/inputTextArea";
+import { OutputTextArea } from "./components/outputTextArea";
+import { PrimaryHeading } from "./components/primaryHeading";
 
 import {
   MainContainer,
   InputWrpper,
-  Heading,
-  Label,
-  Input,
-  SelectWrapper,
-  Submitbutton,
+  InputLabel,
+  SelectButtonWrapper,
   OutputWrapper,
-  Outheading,
-  Output,
+  OutputLabel,
   ContentWrapper,
-} from "./styles/homeStyles";
+} from "./styles/appStyles";
 
 function Home() {
   const [language, setLanguage] = useState({});
@@ -33,29 +33,29 @@ function Home() {
 
   return (
     <MainContainer id="main">
-      <Heading id="heading">Simple Text Translator</Heading>
+      <PrimaryHeading id="heading">Simple Text Translator</PrimaryHeading>
       <ContentWrapper id="contentWrapper">
         <InputWrpper id="inputWrapper">
-          <Label isError={error} isOutput={output}>
+          <InputLabel isError={error} isOutput={output}>
             {message}
-          </Label>
-          <Input
+          </InputLabel>
+          <InputTextArea
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
-          ></Input>
-          <SelectWrapper id="SelectWrapper">
+          ></InputTextArea>
+          <SelectButtonWrapper id="SelectWrapper">
             <Select
               options={languages}
               theme={SelectTheme}
               onChange={setLanguage}
               placeholder="Translate to ..."
             ></Select>
-          </SelectWrapper>
-          <Submitbutton onClick={handleTranslate}>Submit</Submitbutton>
+          </SelectButtonWrapper>
+          <SubmitButton onClick={handleTranslate}>Submit</SubmitButton>
         </InputWrpper>
         <OutputWrapper id="outputWrapper" isOutput={output}>
-          <Outheading id="outHeading">Translation</Outheading>
-          <Output>{output}</Output>
+          <OutputLabel id="outHeading">Translation</OutputLabel>
+          <OutputTextArea>{output}</OutputTextArea>
         </OutputWrapper>
       </ContentWrapper>
     </MainContainer>
