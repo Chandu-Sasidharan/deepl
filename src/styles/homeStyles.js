@@ -15,8 +15,8 @@ export const Heading = styled.div`
   justify-self: center;
   color: #777;
   font-size: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 
   @media screen and (max-width: 50rem) {
     font-size: 2rem;
@@ -59,11 +59,12 @@ export const Input = styled.textarea`
   width: 100%;
   font-size: 1.5rem;
   padding: 1rem 1rem;
-  height: 15rem;
+  height: 20rem;
   color: #555;
-  border-color: #ccc;
+  border: none;
+  outline: none;
   border-radius: 0.5rem;
-  outline-color: #f9a796;
+  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.2);
 `;
 
 export const SelectWrapper = styled.div`
@@ -100,7 +101,9 @@ export const Submitbutton = styled.div`
 `;
 
 export const OutputWrapper = styled.div`
-  display: ${(props) => (props.isOutput ? "grid" : "none")};
+  /* display: ${(props) => (props.isOutput ? "grid" : "none")}; */
+  display: grid;
+  row-gap: 1rem;
   width: 100%;
   justify-self: center;
   align-self: flex-start;
@@ -110,7 +113,6 @@ export const OutputWrapper = styled.div`
 `;
 
 export const Outheading = styled.div`
-  margin: 0.5rem;
   color: #777;
   font-size: 2rem;
   font-style: italic;
@@ -121,12 +123,12 @@ export const Outheading = styled.div`
 `;
 
 export const Output = styled.div`
-  display: grid;
   width: 100%;
-  padding: 1rem;
-  justify-self: center;
-  align-self: flex-start;
   font-size: 1.5rem;
+  padding: 1rem 1rem;
+  height: 20rem;
   color: #555;
-  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.2);
 `;

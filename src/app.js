@@ -48,7 +48,7 @@ function Home() {
           <Submitbutton onClick={handleTranslate}>Submit</Submitbutton>
         </InputWrpper>
         <OutputWrapper id="outputWrapper" isOutput={output}>
-          <Outheading>Translation</Outheading>
+          <Outheading id="outHeading">Translation</Outheading>
           <Output>{output}</Output>
         </OutputWrapper>
       </ContentWrapper>
