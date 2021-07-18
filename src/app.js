@@ -22,9 +22,13 @@ function Home() {
   const [language, setLanguage] = useState({});
   const [inputText, setInputText] = useState("");
   const [output, setOutput] = useState(null);
+  const [error, setError] = useState(null);
+
+  let message = "Enter text to Translate";
+  if (error) message = error;
 
   function handleTranslate() {
-    Translate(language, inputText, setOutput);
+    Translate(language, inputText, setOutput, setError);
   }
 
   return (
@@ -32,7 +36,9 @@ function Home() {
       <Heading id="heading">Simple Text Translator</Heading>
       <ContentWrapper id="contentWrapper">
         <InputWrpper id="inputWrapper">
-          <Label>Enter text to Translate</Label>
+          <Label isError={error} isOutput={output}>
+            {message}
+          </Label>
           <Input
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}

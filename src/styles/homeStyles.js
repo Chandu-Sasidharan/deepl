@@ -47,7 +47,7 @@ export const InputWrpper = styled.div`
 `;
 
 export const Label = styled.div`
-  color: #777;
+  color: ${(props) => (props.isError ? "#FC5735" : "#777")};
   font-size: 1.75rem;
   font-style: italic;
 
@@ -65,7 +65,7 @@ export const Input = styled.textarea`
   border: none;
   outline: none;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.15);
 `;
 
 export const SelectWrapper = styled.div`
@@ -74,6 +74,8 @@ export const SelectWrapper = styled.div`
   margin-top: 1rem;
   color: #777;
   font-size: 1.6rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
@@ -95,6 +97,7 @@ export const Submitbutton = styled.div`
   cursor: pointer;
   transition: all 0.2s;
   justify-self: flex-end;
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
 
   &:hover {
     background: #bbb;
@@ -131,5 +134,5 @@ export const Output = styled.div`
   color: #555;
   border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.15rem 0.15rem rgba(0, 0, 0, 0.15);
 `;
