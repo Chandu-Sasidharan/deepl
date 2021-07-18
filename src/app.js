@@ -25,7 +25,7 @@ function Home() {
   const [output, setOutput] = useState(null);
   const [error, setError] = useState(null);
 
-  let message = "Enter text to Translate";
+  let message = "Enter text in English";
   if (error) message = error;
 
   function handleTranslate() {
