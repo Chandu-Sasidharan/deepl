@@ -4,7 +4,8 @@ function SelectTheme(theme) {
     colors: {
       ...theme.colors,
       primary25: "#F9A796",
-      primary: "#FF7043",
+      primary: "#F9A796",
+      neutral80: "555",
     },
   };
 }

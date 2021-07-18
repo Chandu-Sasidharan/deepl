@@ -52,6 +52,9 @@ export const Input = styled.textarea`
   padding: 1rem 1rem;
   height: 15rem;
   color: #555;
+  border-color: #ccc;
+  border-radius: 0.5rem;
+  outline-color: #f9a796;
 `;
 
 export const SelectWrapper = styled.div`
