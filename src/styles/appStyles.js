@@ -45,17 +45,21 @@ export const InputLabel = styled.div`
 `;
 
 export const SelectButtonWrapper = styled.div`
-  width: 100%;
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
   margin-top: 1rem;
   color: #777;
   font-size: 1.6rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: 50rem) {
     font-size: 1.5rem;
   }
+`;
+
+export const SelectButtonShadow = styled.div`
+  box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 `;
 
 export const OutputWrapper = styled.div`

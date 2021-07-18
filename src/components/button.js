@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SubmitButton = styled.div`
-  margin-top: 1rem;
   background: transparent;
   width: fit-content;
   height: fit-content;

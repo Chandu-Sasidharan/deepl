@@ -13,6 +13,7 @@ import {
   InputWrpper,
   InputLabel,
   SelectButtonWrapper,
+  SelectButtonShadow,
   OutputWrapper,
   OutputLabel,
   ContentWrapper,
@@ -44,14 +45,16 @@ function Home() {
             onChange={(e) => setInputText(e.target.value)}
           ></InputTextArea>
           <SelectButtonWrapper id="SelectWrapper">
-            <Select
-              options={languages}
-              theme={SelectTheme}
-              onChange={setLanguage}
-              placeholder="Translate to ..."
-            ></Select>
+            <SelectButtonShadow>
+              <Select
+                options={languages}
+                theme={SelectTheme}
+                onChange={setLanguage}
+                placeholder="Translate to ..."
+              ></Select>
+            </SelectButtonShadow>
+            <SubmitButton onClick={handleTranslate}>Submit</SubmitButton>
           </SelectButtonWrapper>
-          <SubmitButton onClick={handleTranslate}>Submit</SubmitButton>
         </InputWrpper>
         <OutputWrapper id="outputWrapper" isOutput={output}>
           <OutputLabel id="outHeading">Translation</OutputLabel>
