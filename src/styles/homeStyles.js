@@ -26,14 +26,15 @@ export const Heading = styled.div`
 export const ContentWrapper = styled.div`
   display: grid;
   align-items: flex-start;
-  width: 80vw;
+  width: 70vw;
   column-gap: 3rem;
   grid-template-columns: 1fr 1fr;
+  padding-bottom: 4rem;
 
   @media screen and (max-width: 50em) {
     grid-template-columns: 1fr;
     row-gap: 3rem;
-    width: 90vw;
+    width: 80vw;
   }
 `;
 
@@ -47,7 +48,7 @@ export const InputWrpper = styled.div`
 
 export const Label = styled.div`
   color: #777;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-style: italic;
 
   @media screen and (max-width: 50rem) {
@@ -114,7 +115,7 @@ export const OutputWrapper = styled.div`
 
 export const Outheading = styled.div`
   color: #777;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-style: italic;
 
   @media screen and (max-width: 50rem) {

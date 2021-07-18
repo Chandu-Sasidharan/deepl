@@ -32,7 +32,7 @@ function Home() {
       <Heading id="heading">Simple Text Translator</Heading>
       <ContentWrapper id="contentWrapper">
         <InputWrpper id="inputWrapper">
-          <Label>Enter text in English</Label>
+          <Label>Enter text to Translate</Label>
           <Input
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
