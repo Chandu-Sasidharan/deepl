@@ -2,8 +2,8 @@ import axios from "axios";
 import qs from "qs";
 
 async function Translate(language, inputText, setOutput, setError) {
-  if (!inputText) return setError("Error: Please enter text");
-  if (!language.value) return setError("Error: Please select a language");
+  if (!inputText) return setError("Please enter text");
+  if (!language.value) return setError("Please select a language");
   setError(null);
   const data = {
     Auth_Key: process.env.REACT_APP_AUTH_KEY,
