@@ -34,7 +34,7 @@ export const InputWrpper = styled.div`
 `;
 
 export const InputLabel = styled.div`
-  color: ${(props) => (props.isError ? "#FC5735" : "#777")};
+  color: ${({$isError}) => $isError ? "#FC5735" : "#777"};
   font-size: 1.75rem;
   font-style: italic;
   margin-left: 1rem;
@@ -63,7 +63,6 @@ export const SelectButtonShadow = styled.div`
 `;
 
 export const OutputWrapper = styled.div`
-  /* display: ${(props) => (props.isOutput ? "grid" : "none")}; */
   display: grid;
   row-gap: 1rem;
   width: 100%;

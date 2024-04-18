@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  TranslateFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs20.x
+      CodeUri: ./
+      MemorySize: 512
+      Timeout: 10
+      Environment:
+        Variables:
+          DEEPL_API_KEY: your-api-key
+          DEEPL_API_URL: https://api-free.deepl.com/v2/translate
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST

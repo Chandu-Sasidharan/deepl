@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Select from "react-select";
 import Translate from "./utils/translate";
 import { languages } from "./utils/languages";
 import SelectTheme from "./utils/selectTheme";
+import GlobalStyles from "./styles/globalStyles"
 import { SubmitButton } from "./components/button";
 import { InputTextArea } from "./components/inputTextArea";
 import { OutputTextArea } from "./components/outputTextArea";
@@ -19,7 +20,7 @@ import {
   ContentWrapper,
 } from "./styles/appStyles";
 
-function Home() {
+export default function Home() {
   const [language, setLanguage] = useState({});
   const [inputText, setInputText] = useState("");
   const [output, setOutput] = useState(null);
@@ -34,10 +35,11 @@ function Home() {
 
   return (
     <MainContainer id="main">
+      <GlobalStyles />
       <PrimaryHeading id="heading">Simple Text Translator</PrimaryHeading>
       <ContentWrapper id="contentWrapper">
         <InputWrpper id="inputWrapper">
-          <InputLabel isError={error} isOutput={output}>
+          <InputLabel $isError={error}>
             {message}
           </InputLabel>
           <InputTextArea
@@ -50,13 +52,13 @@ function Home() {
                 options={languages}
                 theme={SelectTheme}
                 onChange={setLanguage}
-                placeholder="Translate to ..."
+                placeholder="Translate to"
               ></Select>
             </SelectButtonShadow>
             <SubmitButton onClick={handleTranslate}>Submit</SubmitButton>
           </SelectButtonWrapper>
         </InputWrpper>
-        <OutputWrapper id="outputWrapper" isOutput={output}>
+        <OutputWrapper id="outputWrapper">
           <OutputLabel id="outHeading">Translation</OutputLabel>
           <OutputTextArea>{output}</OutputTextArea>
         </OutputWrapper>
@@ -64,5 +66,3 @@ function Home() {
     </MainContainer>
   );
 }
-
-export default Home;
