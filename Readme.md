@@ -19,7 +19,7 @@ This repository contains a project designed to demonstrate the integration betwe
 ### 1. Create a DeepL API Account
 
 - Visit [DeepL Subscription](https://www.deepl.com/pro-api?cta=header-pro-api) and sign up for a free plan.
-- Generate an API key in your account settings. Keep this key secure as it will be needed for your Lambda function's environment variables.
+- Generate an API key in your account settings. Keep this key secure as it will be needed for your Lambda function.
 
 ### 2. Clone the Repository
 
@@ -89,22 +89,15 @@ VITE_PROXY_URL=https://your-api-gateway-url
 npm run dev
 ```
 
-### Frontend Deployment
+#### Frontend Deployment
 
 Deploy your frontend to AWS Amplify or any other preferred service.
 
-## Educational Objectives
+### Note
 
-- **Understanding Client-Server Architecture**: Learn how the frontend interacts with a backend service using HTTP requests.
-- **Exploring Serverless with AWS Lambda**: Gain insights into deploying and managing serverless functions.
-- **API Integration**: Understand how to integrate third-party APIs securely using serverless functions as proxies.
-- **Environment Management**: Learn how to manage and secure API keys and other sensitive information.
+You will have to secure your proxy API if you intend to use this application in a production environment.
 
-## Note
-
-Secure your proxy API in a production environment.
-
-## Support
+### Support
 
 For support, questions, or feedback, reach out to me via email at [mail@chandu-sasidharan.de](mailto:mail@chandu-sasidharan.de).
 
